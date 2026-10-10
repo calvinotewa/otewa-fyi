@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  pubDate: Date;
+  minutes: number;
+  summary: string;
+  image?: string;
+}
+
+const { title, url, pubDate, minutes, summary, image } = Astro.props;
+---
+<article class="flex flex-row mt-6 max-w-prose">
+  <div class="flex-none">
+    <a href={url}>
+      {image && (
+        <img
+          src={image}
+          alt=""
+          class="w-24 rounded-md sm:w-40"
+          width="160"
+          height="120"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+    </a>
+  </div>
+  <div class="article-link-content pl-4 sm:pl-6">
+    <h3 class="flex items-center text-xl font-semibold">
+      <a
+        class="decoration-royal-700 hover:underline hover:underline-offset-2 dark:decoration-royal-200"
+        href={url}
+      >
+        {title}
+      </a>
+    </h3>
+    <div class="text-sm text-royal-700 dark:text-royal-200">
+      <div class="flex flex-row flex-wrap items-center">
+        <time datetime={pubDate.toISOString()}>
+          {pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </time>
+        <span class="px-2 text-royal-700 dark:text-royal-200">&middot;</span>
+        <span title="Reading time">{minutes} mins</span>
+      </div>
+    </div>
+    <div class="article-link-summary py-1 prose dark:prose-invert">
+      {summary}
+    </div>
+  </div>
+</article>

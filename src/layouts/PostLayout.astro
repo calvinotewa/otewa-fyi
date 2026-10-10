@@ -1,0 +1,40 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  pubDate: Date;
+  minutes: number;
+  image?: string;
+}
+
+const { title, description, pubDate, minutes, image } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <article class="prose dark:prose-invert max-w-prose mx-auto py-6">
+    <header>
+      <h1 class="text-4xl font-extrabold">{title}</h1>
+      <div class="text-sm text-royal-700 dark:text-royal-200 not-prose">
+        <div class="flex flex-row flex-wrap items-center">
+          <time datetime={pubDate.toISOString()}>
+            {pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+          </time>
+          <span class="px-2 text-royal-700 dark:text-royal-200">&middot;</span>
+          <span title="Reading time">{minutes} mins</span>
+        </div>
+      </div>
+      {image && (
+        <img src={image} alt="" class="rounded-md mt-4 not-prose" width="800" height="600" loading="lazy" />
+      )}
+    </header>
+    <div class="prose dark:prose-invert">
+      <slot />
+    </div>
+    <footer class="not-prose mt-8 text-sm">
+      <a class="underline underline-offset-2 decoration-royal-700 dark:decoration-royal-200 hover:decoration-2" href="/blog/">
+        &larr; Back to posts
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
