@@ -6,8 +6,8 @@ export async function GET(context) {
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );
   return rss({
-    title: 'Hello World',
-    description: 'A Hello World template site built with Astro, React, MDX, and Tailwind CSS.',
+    title: 'Calvin Otewa',
+    description: 'Ideas Calvin Otewa likes to come back to and read occasionally.',
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
