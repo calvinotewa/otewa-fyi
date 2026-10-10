@@ -17,7 +17,7 @@ export default function MobileNav() {
         aria-label="Menu"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center justify-center w-8 h-8 text-royal-700 dark:text-white hover:text-royal-200 dark:hover:text-royal-200 transition-colors"
+        className="flex items-center justify-center w-8 h-8 text-white hover:text-royal-200 transition-colors"
       >
         {open ? (
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="inline-block w-4 h-4" fill="currentColor">
@@ -30,9 +30,9 @@ export default function MobileNav() {
         )}
       </button>
       {open && (
-        <nav className="absolute right-0 top-full mt-2 w-40 rounded-md border border-royal-200 dark:border-royal-700 bg-royal-50 dark:bg-royal-600 shadow-lg py-2 text-sm">
+        <nav className="absolute right-0 top-full mt-2 w-40 rounded-md border border-royal-700 bg-royal-600 shadow-lg py-2 text-sm">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="block px-4 py-2 hover:bg-royal-100 dark:hover:bg-royal-700">
+            <a key={l.href} href={l.href} className="block px-4 py-2 hover:bg-royal-700">
               {l.label}
             </a>
           ))}

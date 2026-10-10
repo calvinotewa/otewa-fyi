@@ -36,15 +36,15 @@ const socials = [
         alt="Hello World"
         loading="eager"
         decoding="async"
-        src="/images/avatar.svg"
+        src="/images/profile.jpeg"
       />
       <h1 class="text-4xl font-extrabold">Hello World</h1>
-      <h2 class="text-xl text-royal-200 dark:text-royal-200">A template personal site</h2>
+      <h2 class="text-xl text-royal-200">A template personal site</h2>
       <div class="mt-1 text-2xl">
-        <div class="flex flex-wrap text-royal-100 dark:text-royal-200">
+        <div class="flex flex-wrap text-royal-200">
           {socials.map((s) => (
             <a
-              class="px-1 transition-transform hover:scale-125 hover:text-white dark:hover:text-white"
+              class="px-1 transition-transform hover:scale-125 hover:text-white"
               style="will-change:transform"
               href={s.href}
               target="_blank"
@@ -61,7 +61,7 @@ const socials = [
         </div>
       </div>
     </header>
-    <section class="prose dark:prose-invert">
+    <section class="prose">
       <p>
         Hello world! 👋<br />
         This is a template personal site built with Astro, React, MDX, and Tailwind CSS.<br />

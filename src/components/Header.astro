@@ -1,5 +1,4 @@
 ---
-import ThemeToggle from './ThemeToggle';
 import MobileNav from './MobileNav';
 
 const { siteTitle = 'Hello World' } = Astro.props;
@@ -8,7 +7,7 @@ const { siteTitle = 'Hello World' } = Astro.props;
   <nav class="flex items-center justify-between" aria-label="Main">
     <div class="flex flex-row items-center">
       <a
-        class="decoration-royal-700 hover:underline hover:decoration-2 hover:underline-offset-2 dark:decoration-royal-200"
+        class="decoration-royal-200 hover:underline hover:decoration-2 hover:underline-offset-2"
         href="/"
       >
         {siteTitle}
@@ -17,18 +16,17 @@ const { siteTitle = 'Hello World' } = Astro.props;
     <div class="flex items-center gap-1">
       <a
         href="/blog/"
-        class="hidden sm:inline-block px-2 py-1 text-sm font-medium underline underline-offset-2 decoration-royal-700 dark:decoration-royal-200 hover:decoration-2"
+        class="hidden sm:inline-block px-2 py-1 text-sm font-medium underline underline-offset-2 decoration-royal-200 hover:decoration-2"
       >
         Blog
       </a>
       <a
         href="/about/"
-        class="hidden sm:inline-block px-2 py-1 text-sm font-medium underline underline-offset-2 decoration-royal-700 dark:decoration-royal-200 hover:decoration-2"
+        class="hidden sm:inline-block px-2 py-1 text-sm font-medium underline underline-offset-2 decoration-royal-200 hover:decoration-2"
       >
         About
       </a>
       <MobileNav client:load />
-      <ThemeToggle client:load />
     </div>
   </nav>
 </header>

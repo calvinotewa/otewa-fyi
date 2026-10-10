@@ -29,22 +29,22 @@ const { title, url, pubDate, minutes, summary, image } = Astro.props;
   <div class="article-link-content pl-4 sm:pl-6">
     <h3 class="flex items-center text-xl font-semibold">
       <a
-        class="decoration-royal-700 hover:underline hover:underline-offset-2 dark:decoration-royal-200"
+        class="decoration-royal-200 hover:underline hover:underline-offset-2"
         href={url}
       >
         {title}
       </a>
     </h3>
-    <div class="text-sm text-royal-700 dark:text-royal-200">
+    <div class="text-sm text-royal-200">
       <div class="flex flex-row flex-wrap items-center">
         <time datetime={pubDate.toISOString()}>
           {pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
         </time>
-        <span class="px-2 text-royal-700 dark:text-royal-200">&middot;</span>
+        <span class="px-2 text-royal-200">&middot;</span>
         <span title="Reading time">{minutes} mins</span>
       </div>
     </div>
-    <div class="article-link-summary py-1 prose dark:prose-invert">
+    <div class="article-link-summary py-1 prose">
       {summary}
     </div>
   </div>
