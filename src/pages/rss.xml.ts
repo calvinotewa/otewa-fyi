@@ -7,7 +7,7 @@ export async function GET(context) {
   );
   return rss({
     title: 'Calvin Otewa',
-    description: 'Ideas Calvin Otewa likes to come back to and read occasionally.',
+    description: 'Interesting reads and things worth sharing.',
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
